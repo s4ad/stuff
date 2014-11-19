@@ -39,7 +39,7 @@ var app = angular.module('app', [
         app.value      = $provide.value;
 
         $urlRouterProvider
-            .otherwise('/app/dashboard');
+            .otherwise('/app/dashboard?'+Math.random());
         $stateProvider            
             .state('app', {
                 abstract: true,
@@ -48,15 +48,15 @@ var app = angular.module('app', [
             })
             .state('app.dashboard', {
                 url: '/dashboard',
-                templateUrl: 'ui/dashboard.php'
+                templateUrl: 'ui/dashboard.php?v'+Math.random()
             })
             .state('app.widgets', {
                 url: '/widgets',
-                templateUrl: 'ui/ui_widgets.php'
+                templateUrl: 'ui/ui_widgets.php?v='+Math.random()
             })
             .state('app.files', {
-                url: '/files'+Math.random(),
-                templateUrl: 'ui/files.php',
+                url: '/files',
+                templateUrl: 'ui/files.php?v='Math.random()
 				
 
             })
